@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 .active{
@@ -21,6 +22,7 @@
   display: flex;
   justify-content: center;
   padding: 5rem;
+  overflow-y: auto;
 }
 
 .wrapper::before {
@@ -214,8 +216,21 @@ width: fit-content;
 .winner{
   width: 80vw;
   text-align: center;
+  font-size: 1rem;
 }
 
+.game-box{
+  gap:20px
+}
 
+.tik-tok{
+  width: 270px;
+  height: 210px;
+margin-bottom: 80px;
+}
+.box{
+  width: 90px;
+  height: 90px;
+}
 
 }
