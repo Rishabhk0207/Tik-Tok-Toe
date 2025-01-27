@@ -9,9 +9,13 @@ const resetBtn = document.querySelector("#reset");
 const restartBtn = document.querySelector("#restart");
 
 submitBtn.addEventListener("click", () => {
+ if(( playerOne.value.trim()==="") || (playerTwo.value.trim() === "")){
+    alert("Player name missing");
+ }else{
   secondContiner.classList.add("active");
   firstContiner.classList.add("active");
   showPlayerName.innerText = playerOne.value + " turn";
+ }
 });
 
 let icon = "X";
@@ -91,7 +95,6 @@ function restart() {
     key.style.pointerEvents = "auto";
   });
   showPlayerName.innerHTML = playerOne.value + " turn";
-
   boxes.forEach((key) => {
     if (key.classList.contains("win")) {
       key.classList.remove("win");
@@ -102,13 +105,16 @@ function restart() {
 
 resetBtn.addEventListener("click", () => {
   restart();
+  showPlayerName.style.backgroundColor= "rgba(101, 105, 101, 0.5)";
 });
 
 restartBtn.addEventListener("click", () => {
   restart();
-
+  showPlayerName.style.backgroundColor= "rgba(101, 105, 101, 0.5)";
   playerOne.value = "";
   playerTwo.value = "";
   secondContiner.classList.remove("active");
   firstContiner.classList.remove("active");
 });
+
+
